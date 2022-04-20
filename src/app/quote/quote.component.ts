@@ -15,6 +15,12 @@ export class QuoteComponent implements OnInit {
             new Quote(5, 'Happiness is the feeling that power increases — that resistance is being overcome.', 'Friedrich Nietzsche', 5, 9),
             new Quote(6, 'The secret of happiness, you see is not found in seeking more, but in developing the capacity to enjoy less.', 'Socrates',10, 8),
       ];
+
+      addNewQuote(quote:any){
+            let quoteLength = this.quotes.length;
+            quote.id = quoteLength+1;
+            this.quotes.push(quote)
+      }
       toggleDetails(index:any){
             this.quotes[index].showDescription = !this.quotes[index].showDescription;
       }
