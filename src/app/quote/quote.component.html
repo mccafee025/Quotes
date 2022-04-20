@@ -1,9 +1,15 @@
-<div>
-      <h1>Quotes</h1>
-      <hr>
-      <ul>
-            <li *ngFor='let quote of quotes'>
-                  {{quote.name}}
-            </li>
-      </ul>
-</div>
+<h1>Quotes</h1>
+<hr>
+<ul>
+            <div *ngFor='let quote of quotes; let i = index'>
+                  <div class="card mb-3" >
+                        <div class="card-body">
+                              <p class="card-text">{{quote.name}}</p>
+                              <button (click)="showDesc(i)">Show description</button>
+                        </div>
+                        <app-quote-detail *ngIf='quote.showDescription' [quote]='quote'></app-quote-detail>
+                      </div>
+                     
+            </div>
+</ul>
+
